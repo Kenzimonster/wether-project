@@ -13,7 +13,7 @@ export default function WeatherInfo(props){
    setUnit('celsius');
   }
   
-  if(unit == "celsius"){
+  if(unit === "celsius"){
     return(
       <div className="currentWeather">
         <div>
