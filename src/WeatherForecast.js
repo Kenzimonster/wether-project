@@ -24,7 +24,9 @@ setLoaded(false);
           {forecast.map(function(dailyForecast, index){
             if (index  > 0){
               return( <div key={index}><WeatherForecastDay data={dailyForecast}/></div>)
-            } 
+            } else {
+              return null;
+            }
          })}
         </div>
       </div>
