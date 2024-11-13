@@ -7,7 +7,7 @@ export default function WeatherInfo(props){
     return(
       <div className="currentWeather">
         <div>
-         <h2 className="currentCity">{props.data.city}</h2>
+         <h2 className="currentCity">{props.data.city}, {props.data.country}</h2>
          <p className="currentWeatherDescription">
            <span><FormattedTime date={props.data.date}/></span>,  <span>{props.data.description}</span><br/>
            Humidity: <span className="currentHumidity">{props.data.humidity}</span>%, Wind: <span className="currentWindspeed">{props.data.wind}</span> km/h

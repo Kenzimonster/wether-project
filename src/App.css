@@ -85,7 +85,6 @@ margin-right: 30px;
 }
 
 .currentWeather {
- 
   display: flex;
   justify-content: space-evenly;
   padding:20px;
@@ -93,8 +92,9 @@ margin-right: 30px;
 
 .currentCity {
   font-size: 40px;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0;
+  line-height: 40px;
 }
 
 .currentWeatherDescription {
