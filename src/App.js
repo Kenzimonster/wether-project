@@ -7,10 +7,6 @@ function App() {
     <div>
       <section className="messageBoard">
         <Weather  defaultCity="Melbourne"/>
-        <hr />
-        <div class="forecast"> 
-          <h4>"forcast being added soon"</h4>
-        </div>
         <hr/>
         <footer className="authorLinks">
          <p>

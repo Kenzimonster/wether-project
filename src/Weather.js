@@ -2,6 +2,7 @@ import React,{ useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import logo from "./logo.jpg";
 import HeaderDate from "./HeaderDate";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props){
@@ -12,6 +13,7 @@ export default function Weather(props){
     setWeatherData({
       ready: true,
       city: response.data.city,
+      coordinates: response.data.coordinates,
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       humidity: response.data.temperature.humidity,
@@ -55,10 +57,11 @@ export default function Weather(props){
         </header>
         <hr/>
         <WeatherInfo data={weatherData}/>
+        <WeatherForecast coordinates={weatherData.coordinates}/>
       </div>
     );
   }else{
     search();
-    return <h1 >"Loading..."</h1>
+    return <h1 >"The Goblins are collecting the weather data"</h1>
   }
 }

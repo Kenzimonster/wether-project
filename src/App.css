@@ -133,10 +133,49 @@ div.searchBar {
   text-align: center;
   opacity: 0.6;
 }
+.todayMaxMin {
+  text-align: center;
+  margin: 0px auto 20px;
+  font-size: 22px;
+}
+
+.todayMaxMin em{
+  font-weight: normal;
+}
+
+.minimum {
+opacity: 0.6;
+}
 
 .forecast {
   color: #272044;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   text-align: center;
+}
+
+.forecastInner{
+  min-width: 200px;
+}
+
+.forecastDate{
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+.forecastMax{  
+  font-size: 16px;
+ font-weight: bold; 
+  opacity: 0.8;
+}
+
+.forecastCondition{
+  width: 70px;
+}
+
+.forecastMin{
+  opacity: 0.5;
 }
 
 .authorLinks {
