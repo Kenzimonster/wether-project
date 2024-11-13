@@ -2,7 +2,7 @@ import React from "react";
 import Weather from "./Weather";
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div>
       <section className="messageBoard">
@@ -22,5 +22,3 @@ function App() {
     </div>
   ) ;
 }
-
-export default App;

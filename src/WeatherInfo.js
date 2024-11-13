@@ -1,19 +1,9 @@
-import React, {useState }  from "react";
+import React  from "react";
 import FormattedTime from "./FormattedTime";
 
 export default function WeatherInfo(props){
-  let [ unit, setUnit] = useState('celsius');
 
-  function showFahreneit(event){
-   event.preventDefault();
-   setUnit('fahrenheit');
-  }
- function showCelsius(event){
-   event.preventDefault();
-   setUnit('celsius');
-  }
-  
-  if(unit === "celsius"){
+  if(props.units === "metric"){
     return(
       <div className="currentWeather">
         <div>
@@ -29,7 +19,7 @@ export default function WeatherInfo(props){
              <img src={props.data.icon} alt={props.data.iconAlt} className="currentTempIcon"/>
            </div>
            <div className="currentTempValue">{Math.round(props.data.temperature)}</div>
-           <div className="currentTempUnit">°C|<a href="/" onClick={showFahreneit}>°F</a></div>
+           <div className="currentTempUnit">°C</div>
          </div>
          <p className="feelsLike">Feel Like:{" "}{Math.round(props.data.feelLike)}°C</p>
        </div> 
@@ -53,7 +43,7 @@ export default function WeatherInfo(props){
            <img src={props.data.icon} alt={props.data.iconAlt} className="currentTempIcon"/>
           </div>
          <div className="currentTempValue">{Math.round(fahrenheitActual)}</div>
-         <div className="currentTempUnit"><a href="/" onClick={showCelsius}>°C</a>|°F</div>
+         <div className="currentTempUnit">°F</div>
        </div>
        <p className="feelsLike">Feel Like:{" "}{Math.round(fahrenheitFeel)}°F</p>
      </div> 

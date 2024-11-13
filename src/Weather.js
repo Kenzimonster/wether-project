@@ -6,9 +6,18 @@ import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props){
+  let [ unit, setUnit] = useState('metric');
   const [weatherData, setWeatherData] = useState({ready: false});
   const [ city, setCity] = useState(props.defaultCity);
 
+  function showFahreneit(event){
+   event.preventDefault();
+   setUnit('imperial');
+  }
+ function showCelsius(event){
+   event.preventDefault();
+   setUnit('metric');
+  }
   function handleResponse(response){
     setWeatherData({
       ready: true,
@@ -52,12 +61,16 @@ export default function Weather(props){
                 <input type="search" placeholder="pick a city" autoFocus="on" className="searcInput" onChange={handleChangeCity}/>
                 <input type="submit" value="Search" className="searchButton" />
               </div> 
+              <div className="unitChoice">unit:{" "}
+                <a href="/" onClick={showCelsius}>°C</a>{" "}|{" "}
+                <a href="/" onClick={showFahreneit}>°F</a>
+              </div>
             </form>
           </div>
         </header>
         <hr/>
-        <WeatherInfo data={weatherData}/>
-        <WeatherForecast coordinates={weatherData.coordinates}/>
+        <WeatherInfo data={weatherData} units={unit}/>
+        <WeatherForecast coordinates={weatherData.coordinates} units={unit}/>
       </div>
     );
   }else{

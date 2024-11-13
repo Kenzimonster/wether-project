@@ -1,7 +1,9 @@
 import React from"react";
+
 export default function WeatherForecastDay(props){
   let icon = props.data.condition.icon_url;
   let iconAlt = props.data.condition.icon;
+
   function day(){
    let date = new Date(props.data.time * 1000);
    let day = date.getDay();
@@ -16,14 +18,15 @@ export default function WeatherForecastDay(props){
     let temperature = Math.round(props.data.temperature.minimum);
     return `${temperature}`
   }
+  
   return(
     <div className="forecastInner">
       <div className="forecastDay">{day()}</div>
       <img src={icon} alt={iconAlt} className="forecastCondition"/>
       <div className="forecastTemperature">
-        <span className="forecastMax">{maxTemp()}°C</span>
+        <span className="forecastMax">{maxTemp()}°</span>
         {" | "}
-        <span className="forecastMin">{minTemp()}°C</span>
+        <span className="forecastMin">{minTemp()}°</span>
       </div>
     </div>
   )
